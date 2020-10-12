@@ -1,3 +1,26 @@
+class Binary_Calculator:
+  def __init__ (self,num): 
+    self.num = num
+
+  def binary(self):
+    num = self.num;
+    l = []
+    temp = num;
+    
+    while(temp): 
+        last_digit = temp % 2;
+        temp = int(temp / 2);
+        l.append(last_digit);
+    l.reverse()
+    
+    # initialize an empty string 
+    str1 = ""  
+    
+    # traverse in the string   
+    for ele in l:  
+        str1 += str(ele)   
+    print(str1)
+ 
 class Power_Of: 
     def __init__(self, base_num, exponent):
         self.base_num = base_num
@@ -13,7 +36,6 @@ class Power_Of:
             self.negative_exponent()
         else:
             self.positive_or_negative_num()
-
     def positive_or_negative_num(self):
         result = self.multiplication()
         print(result)
@@ -54,9 +76,34 @@ class Power_Of:
 # Any number can go on x or y
 # Once numbers are placed where x and y are at..
 # click RUN (desktop) or the green PLAY button (mobile)! :D 
-print("Enter a number: ")
-number = int(input())
-print("Enter a power: ")
-power = int(input())
-num1 = Power_Of(number, power).checker()
+print("::: Welcome to the Calculator  :::")
+print("::: Current version: 1.0       :::")
+print("::: Authors: John M., Matt R.  :::")
+print()
+print(" PRESS ANY KEY TO CONTINUE ")
+input()
+print("Select: ")
+print("a. Power of")
+print("b. Binary conversion")
+selection = input()
+while(True):
+  if(selection == 'a' or selection == 'b'):
+    break
+  print("Enter a valid selection: ")
+  selection = input()
 
+if(selection == 'a'):
+  print("::: Power Of Tool :::")
+  print("Please Enter a number: ")
+  number = int(input())
+  print("Please Enter a Power: ")
+  power = int(input())
+  num1 = Power_Of(number, power).checker()  
+
+elif(selection == 'b'):
+  print("::: BINARY CONVERSION TOOL 1.0 :::")
+  print("Enter a number for conversion: ")
+  number = int(input())
+  Binary_Calculator(number).binary()
+
+print("THANK YOU =)")
