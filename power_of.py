@@ -76,14 +76,21 @@ class Power_Of:
 # Any number can go on x or y
 # Once numbers are placed where x and y are at..
 # click RUN (desktop) or the green PLAY button (mobile)! :D 
+
+## Main
+## Intro 
+  
 print("::::::::::::::::::::::::::::::::::")
-print("::: Welcome to the Calculator  :::")
+print(":::                            :::")
+print("::: Tech Tool-Kit              :::")
 print("::: Current version: 1.0       :::")
 print("::: Authors: John M., Matt R.  :::")
 print(":::                            :::")
 print("::: Tool-Kit:                  :::")
 print("::: 1. Power-Of Tool           :::")
 print("::: 2. Binary Conversion Tool  :::")
+print("::: 3. File generator          :::")
+print(":::                            :::")
 print("::::::::::::::::::::::::::::::::::")
 print()
 print(" PRESS ANY KEY TO CONTINUE ")
@@ -91,9 +98,10 @@ input()
 print("Select: ")
 print("a. Power-Of Tool")
 print("b. Binary Conversion Tool")
+print("c. File generator")
 selection = input()
 while(True):
-  if(selection == 'a' or selection == 'b'):
+  if(selection == 'a' or selection == 'b' or selection == 'c'):
     break
   print("Enter a valid selection: ")
   selection = input()
@@ -111,5 +119,19 @@ elif(selection == 'b'):
   print("Enter a number for conversion: ")
   number = int(input())
   Binary_Calculator(number).binary()
-
+elif(selection == 'c'):
+  print("::: FILE GENERATOR :::")
+  print("Enter the text to print in file: ")
+  text = input()
+  f = open("myFile.txt", "w")
+  f.write(text)
+  f.close()
+  print("Would you like to open the file?")
+  print("Press 'y' for yes and 'n' for no ")
+  yn = input()
+  if(yn == 'y'):
+    f = open("myFile.txt", "r")
+    print("The file contents: ")
+    print(f.read()) 
+    f.close()
 print("THANK YOU =)")
